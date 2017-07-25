@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="com.github.ansell.pellet:pellet-jena:2.3.6-ansell" type="repository">
+    <properties maven-id="com.github.ansell.pellet:pellet-jena:2.3.6-ansell" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/pellet-jena-2.3.6-ansell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jena-2.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iri-0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/icu4j-3.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl-2.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pellet-core-2.3.6-ansell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pellet-common-2.3.6-ansell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aterm-java-1.8.2-p1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jjtraveler-0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/shared-objects-1.4.9-p1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jgrapht-jdk1.5-0.7.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xsdlib-20030225.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/relaxngDatatype-20030225.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/pellet-jena-2.3.6-ansell-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/pellet-jena-2.3.6-ansell-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/jena-2.6.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

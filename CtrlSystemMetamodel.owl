@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY control-system-ontology "http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology#"
+     xml:base="http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:control-system-ontology="http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/belongsToDevType -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;belongsToDevType">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystDevType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/belongsToDevice -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;belongsToDevice">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/correspondsTo -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;correspondsTo">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystLink"/>
+        <owl:inverseOf rdf:resource="&control-system-ontology;isLinkedBy"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystDevChannel"/>
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystDevice"/>
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystPoint"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/forCtrlPoint -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;forCtrlPoint">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystLink"/>
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasChannel -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;hasChannel">
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasChildCpoint -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;hasChildCpoint">
+        <owl:inverseOf rdf:resource="&control-system-ontology;hasParentCpoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasCtrlLink -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;hasCtrlLink">
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystLink"/>
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystPoint"/>
+        <owl:inverseOf rdf:resource="&control-system-ontology;forCtrlPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDevType -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;hasDevType">
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystDevType"/>
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasParentCpoint -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;hasParentCpoint">
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystPoint"/>
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/isLinkedBy -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;isLinkedBy">
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystLink"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystDevChannel"/>
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystDevice"/>
+                    <rdf:Description rdf:about="&control-system-ontology;CtrlSystPoint"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/matches -->
+
+    <owl:ObjectProperty rdf:about="&control-system-ontology;matches">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+        <rdfs:range rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasAuxInfo -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasAuxInfo">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasBusInfo -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasBusInfo">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasCoefficient -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasCoefficient">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystLink"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDataLength -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasDataLength">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDataType -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasDataType">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>b</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>d</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>h</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first>i</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first>q</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first>s</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                        <rdf:first>t</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                                <rdf:first>u</rdf:first>
+                                                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDirection -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasDirection">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDirectionType -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasDirectionType">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>r</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>w</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasDriverName -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasDriverName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasName -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasNumber -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasNumber">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasOffset -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasOffset">
+        <rdfs:domain rdf:resource="&control-system-ontology;CtrlSystLink"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/hasSeqNumber -->
+
+    <owl:DatatypeProperty rdf:about="&control-system-ontology;hasSeqNumber">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/CtrlSystDevChannel -->
+
+    <owl:Class rdf:about="&control-system-ontology;CtrlSystDevChannel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/CtrlSystDevType -->
+
+    <owl:Class rdf:about="&control-system-ontology;CtrlSystDevType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasChannel"/>
+                <owl:someValuesFrom rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&control-system-ontology;CtrlSystDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/CtrlSystDevice -->
+
+    <owl:Class rdf:about="&control-system-ontology;CtrlSystDevice">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasBusInfo"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasDevType"/>
+                <owl:onClass rdf:resource="&control-system-ontology;CtrlSystDevType"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasDriverName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasAuxInfo"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/CtrlSystLink -->
+
+    <owl:Class rdf:about="&control-system-ontology;CtrlSystLink"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/CtrlSystPoint -->
+
+    <owl:Class rdf:about="&control-system-ontology;CtrlSystPoint">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasParentCpoint"/>
+                <owl:onClass rdf:resource="&control-system-ontology;CtrlSystPoint"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&control-system-ontology;hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mary/ontologies/2017/0/control-system-ontology/trig_read -->
+
+    <owl:NamedIndividual rdf:about="&control-system-ontology;trig_read">
+        <rdf:type rdf:resource="&control-system-ontology;CtrlSystDevType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#link">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#chan">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#point">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#type">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#point1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#point2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#dev">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;belongsToDevice"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#dev"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasChannel"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#chan"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#dev"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&control-system-ontology;CtrlSystDevice"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#dev"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasCtrlLink"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#link"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;forCtrlPoint"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#link"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;correspondsTo"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#link"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;isLinkedBy"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#link"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasChannel"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#chan"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#type"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&control-system-ontology;CtrlSystDevType"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#type"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&control-system-ontology;CtrlSystDevChannel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;belongsToDevType"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#type"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;isLinkedBy"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#link"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;correspondsTo"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#chan"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#link"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasParentCpoint"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasChildCpoint"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point1"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasChildCpoint"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasParentCpoint"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point1"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;hasCtrlLink"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#link"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#point"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&control-system-ontology;forCtrlPoint"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#link"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#point"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

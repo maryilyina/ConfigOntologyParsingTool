@@ -1,0 +1,1366 @@
+
+#line 1 "ceac124.devtype"
+devtype ceac124 w40i,r20i,w8i,r16i,w1i,r2i,w13i,r100i,w32i,w32i,r32i,r4i,w100i {
+	do_reset	0
+        adc_mode	1
+        adc_beg		2
+        adc_end		3
+        adc_timecode	4
+        adc_gain	5
+        out_mode	9
+
+	do_tab_drop	10
+	do_tab_activate	11
+	do_tab_start	12
+	do_tab_stop	13
+	do_tab_pause	14
+	do_tab_resume	15
+
+        hw_ver		40
+        sw_ver		41
+
+	outrb<0-3>	60
+        inprb<0-3>	68
+	outr8b		84
+        inpr8b		85
+
+	adc<0-15>      	100
+
+        adc_t		adc12
+        adc_pwr		adc13
+	adc_p10v	adc14
+        adc_0v		adc15
+
+	out<0-3>       	200
+        out_rate<0-3>	232
+        out_cur<0-3>	264
+}
+#line 1 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "cgvi8.devtype"
+devtype cgvi8 w40i,r20i,w8i,r16i,w1i,r2i,w13i {
+	raw<0-7>	0
+	quant<0-7>	8
+	mask_bit_<0-7>	16
+	mask8		24
+	progstart	25
+	prescaler	26
+	basebyte	27
+
+	hw_ver		40
+	sw_ver		41
+
+	outrb<0-7>	60
+	inprb<0-7>	68
+	outr8b		84
+	inpr8b		85
+}
+#line 2 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "vsdc2.devtype"
+devtype vsdc2 r10i,r10s,w20i,r2s,r8i,w20i,r30i {
+        hw_ver		0
+        sw_ver		1
+
+	gain<0-1>	2
+
+	int<0-1>	10
+
+	line<0-1>	40
+	get_osc<0-1>	58
+	ptsofs<0-1>	60
+	cur_ptsofs<0-1>	70
+	cur_numpts<0-1>	72
+	write_addr<0-1>	74
+}
+#line 3 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "cdac20.devtype"
+devtype cdac20 w40i,r20i,w8i,r16i,w1i,r2i,w13i,r100i,w32i,w32i,r32i,r4i,w100i {
+	do_reset	0
+        adc_mode	1
+        adc_beg		2
+        adc_end		3
+        adc_timecode	4
+        adc_gain	5
+        out_mode	9
+
+	do_tab_drop	10
+	do_tab_activate	11
+	do_tab_start	12
+	do_tab_stop	13
+	do_tab_pause	14
+	do_tab_resume	15
+
+	do_calb_dac	20
+	autocalb_onoff	21
+	autocalb_secs	22
+	digcorr_mode	23
+
+        hw_ver		40
+        sw_ver		41
+        digcorr_valid	42
+        digcorr_factor	43
+
+	outrb<0-7>	60
+        inprb<0-7>	68
+	outr8b		84
+        inpr8b		85
+
+	adc<0-7>      	100
+
+        adc_t		adc5
+        adc_0v		adc6
+	adc_p10v	adc7
+
+	out0       	200
+        out_rate0	232
+        out_cur0	264
+
+        out		out0
+        out_rate	out_rate0
+        out_cur		out_cur0
+}
+#line 4 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "cac208.devtype"
+devtype cac208 w40i,r20i,w8i,r16i,w1i,r2i,w13i,r100i,w32i,w32i,r32i,r4i,w100i {
+	do_reset	0
+        adc_mode	1
+        adc_beg		2
+        adc_end		3
+        adc_timecode	4
+        adc_gain	5
+        out_mode	9
+
+	do_tab_drop	10
+	do_tab_activate	11
+	do_tab_start	12
+	do_tab_stop	13
+	do_tab_pause	14
+	do_tab_resume	15
+
+        hw_ver		40
+        sw_ver		41
+
+	outrb<0-7>	60
+        inprb<0-7>	68
+	outr8b		84
+        inpr8b		85
+
+	adc<0-23>      	100
+
+	adc_p10v	adc20
+        adc_0v		adc21
+        adc_t		adc22
+        adc_pwr		adc23
+
+	out<0-7>       	200
+        out_rate<0-7>	232
+        out_cur<0-7>	264
+}
+#line 5 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "cpks8.devtype"
+devtype cpks8 w16i,r8i,r2i {
+	out<0-7>	0
+	out_rate<0-7>	8
+	out_cur<0-7>	16
+
+        hw_ver		24
+	sw_ver		25
+}
+#line 6 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "ist_cdac20.devtype"
+devtype ist_cdac20 w50i,r50i {
+	iset		0
+	iset_rate	1
+	switch_on	2
+	switch_off	3
+	rst_ilks	4
+	reset_state	5
+	do_calb_dac	6
+	autocalb_onoff	7
+	autocalb_secs	8
+	digcorr_mode	9
+	reset_c_ilks	10
+
+	dcct1		50
+	dcct2		51
+	dac_mes		52
+	u2		53
+	adc4		54
+	adc_dac		55
+	adc_0v		56
+	adc_p10v	57
+
+	iset_cur	58
+	digcorr_factor	59
+	opr		60
+
+	ilk_out_prot	61
+	ilk_water	62
+	ilk_imax	63
+	ilk_umax	64
+	ilk_battery	65
+	ilk_phase	66
+	ilk_temp	67
+
+	is_on		68
+
+	c_ilk_out_prot	69
+	c_ilk_water	70
+	c_ilk_imax	71
+	c_ilk_umax	72
+	c_ilk_battery	73
+	c_ilk_phase	74
+	c_ilk_temp	75
+
+	cur_polarity	98
+	ist_state	99
+}
+#line 7 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "vepp4_gimn.devtype"
+devtype vepp4_gimn w5i,r5i {
+	code_set	0
+	switch		1
+
+	reset_state     4
+
+	pks_val		5
+	gvi_outrb0	6
+	gvi_outrb1	7
+
+	gimn_state	9
+}
+#line 8 "devlist-vepp4-pult6-2.lst"
+
+#line 1 "devlist_magx_macros.m4"
+
+#line 5
+
+# 1:g0603_name 2:c0612_name 3-26:{line_name,phys_r} triplets
+#line 16
+
+
+#line 22
+
+# 1:a40_name 2:c16_name 3:prefix 4-19:line names
+#line 41
+
+
+#line 48
+
+# 1:device_name 2:prefix 3-10:line names
+#line 59
+
+
+#line 66
+
+# 1:device_name 2:prefix 3-10:line names
+#line 77
+
+
+# 1:device_name 2:a40_and_d16_base_name 3:N 4:coeff
+#line 105
+
+
+# 1:device_name 2:c20_name 3:coeff
+#line 118
+
+
+# 1:device_name 2:c20_name 3:coeff 4/opt:1=>negated_dcct2
+#line 132
+
+
+# 1:device_name 2:c124_name
+#line 142
+
+
+# 1:device_name 2:c124_name
+#line 152
+
+#line 9 "devlist-vepp4-pult6-2.lst"
+
+
+layerinfo	cangw_gimn25:0	0
+
+
+#define(`RAW2AMPS',  0.000000752305) #!!!FLOAT: 278353/370./1e9
+ #!!!FLOAT: 278353/370./1e9/0.89
+# GID25X4_CPLINE(group_name, n) n=[0-3]
+#line 39
+
+# GID25X4_LINE(group_name, ceac124_kid, gvi8_kid, biip_a_kid, biip_b_kid)
+#line 67
+
+
+
+#line 69
+    dev	gid25_group0_ceac		ceac124/remdrv		~ 0,63	b:cangw-gimn25:8002 beg=0 end=7 adc_timecode=3
+#line 69
+    dev	gid25_group0_gvi		cgvi8/remdrv		~ 0,61	b:cangw-gimn25:8002
+#line 69
+    dev gid25_group0_biip_a	vsdc2/remdrv		~ 0,1	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 69
+    dev gid25_group0_biip_b	vsdc2/remdrv		~ 0,2	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 69
+
+#line 69
+    dev gid25_group0_t_uizm0	trig_read		r1i -	gid25_group0_biip_a.int0//gid25_group0_ceac.adc0
+#line 69
+    dev gid25_group0_t_uizm1	trig_read		r1i -	gid25_group0_biip_a.int1//gid25_group0_ceac.adc1
+#line 69
+    dev gid25_group0_t_uizm2	trig_read		r1i -	gid25_group0_biip_b.int0//gid25_group0_ceac.adc2
+#line 69
+    dev gid25_group0_t_uizm3	trig_read		r1i -	gid25_group0_biip_b.int1//gid25_group0_ceac.adc3
+#line 69
+    dev gid25_group0_t_uuvh0	trig_read		r1i -	gid25_group0_biip_a.int0//gid25_group0_ceac.adc4
+#line 69
+    dev gid25_group0_t_uuvh1	trig_read		r1i -	gid25_group0_biip_a.int1//gid25_group0_ceac.adc5
+#line 69
+    dev gid25_group0_t_uuvh2	trig_read		r1i -	gid25_group0_biip_b.int0//gid25_group0_ceac.adc6
+#line 69
+    dev gid25_group0_t_uuvh3	trig_read		r1i -	gid25_group0_biip_b.int1//gid25_group0_ceac.adc7
+#line 69
+
+#line 69
+    cpoint gid25_group0 {
+#line 69
+        ceac	gid25_group0_ceac
+#line 69
+        gvi	gid25_group0_gvi
+#line 69
+        biip0	gid25_group0_biip_a
+#line 69
+        biip1	gid25_group0_biip_b
+#line 69
+
+#line 69
+        
+#line 69
+    row0.onoff		gid25_group0_ceac.outrb0
+#line 69
+    row0.err		gid25_group0_ceac.inprb0
+#line 69
+    row0.ena_gid	gid25_group0_gvi.mask_bit_4
+#line 69
+    row0.ena_vsdc	gid25_group0_gvi.mask_bit_0
+#line 69
+    row0.Uset		gid25_group0_ceac.out0           0.01
+#line 69
+    row0.Umes		gid25_group0_t_uizm0.0           0.01
+#line 69
+    row0.Umes_raw	gid25_group0_ceac.adc0 0.01
+#line 69
+    row0.Uuvh		gid25_group0_t_uuvh0.0           0.01
+#line 69
+    row0.Uuvh_raw	gid25_group0_ceac.adc4 0.01
+#line 69
+    row0.Imes		gid25_group0_biip_a.int0 0.000000845286
+#line 69
+    row0.Dly_gid	gid25_group0_gvi.quant4
+#line 69
+    row0.Dly_vsdc	gid25_group0_gvi.quant0
+#line 69
+
+#line 69
+    row0.osc.gain	gid25_group0_biip_a.gain0
+#line 69
+    row0.osc.int	gid25_group0_biip_a.int0
+#line 69
+    row0.osc.data	gid25_group0_biip_a.line0
+#line 69
+    row0.osc.get	gid25_group0_biip_a.get_osc0
+#line 69
+    row0.osc.ptsofs	gid25_group0_biip_a.ptsofs0
+#line 69
+    row0.osc.cur_ptsofs gid25_group0_biip_a.cur_ptsofs0
+#line 69
+    row0.osc.cur_numpts gid25_group0_biip_a.cur_numpts0
+#line 69
+    row0.osc.write_addr gid25_group0_biip_a.write_addr0
+#line 69
+
+#line 69
+        
+#line 69
+    row1.onoff		gid25_group0_ceac.outrb1
+#line 69
+    row1.err		gid25_group0_ceac.inprb1
+#line 69
+    row1.ena_gid	gid25_group0_gvi.mask_bit_5
+#line 69
+    row1.ena_vsdc	gid25_group0_gvi.mask_bit_1
+#line 69
+    row1.Uset		gid25_group0_ceac.out1           0.01
+#line 69
+    row1.Umes		gid25_group0_t_uizm1.0           0.01
+#line 69
+    row1.Umes_raw	gid25_group0_ceac.adc1 0.01
+#line 69
+    row1.Uuvh		gid25_group0_t_uuvh1.0           0.01
+#line 69
+    row1.Uuvh_raw	gid25_group0_ceac.adc5 0.01
+#line 69
+    row1.Imes		gid25_group0_biip_a.int1 0.000000845286
+#line 69
+    row1.Dly_gid	gid25_group0_gvi.quant5
+#line 69
+    row1.Dly_vsdc	gid25_group0_gvi.quant1
+#line 69
+
+#line 69
+    row1.osc.gain	gid25_group0_biip_a.gain1
+#line 69
+    row1.osc.int	gid25_group0_biip_a.int1
+#line 69
+    row1.osc.data	gid25_group0_biip_a.line1
+#line 69
+    row1.osc.get	gid25_group0_biip_a.get_osc1
+#line 69
+    row1.osc.ptsofs	gid25_group0_biip_a.ptsofs1
+#line 69
+    row1.osc.cur_ptsofs gid25_group0_biip_a.cur_ptsofs1
+#line 69
+    row1.osc.cur_numpts gid25_group0_biip_a.cur_numpts1
+#line 69
+    row1.osc.write_addr gid25_group0_biip_a.write_addr1
+#line 69
+
+#line 69
+        
+#line 69
+    row2.onoff		gid25_group0_ceac.outrb2
+#line 69
+    row2.err		gid25_group0_ceac.inprb2
+#line 69
+    row2.ena_gid	gid25_group0_gvi.mask_bit_6
+#line 69
+    row2.ena_vsdc	gid25_group0_gvi.mask_bit_2
+#line 69
+    row2.Uset		gid25_group0_ceac.out2           0.01
+#line 69
+    row2.Umes		gid25_group0_t_uizm2.0           0.01
+#line 69
+    row2.Umes_raw	gid25_group0_ceac.adc2 0.01
+#line 69
+    row2.Uuvh		gid25_group0_t_uuvh2.0           0.01
+#line 69
+    row2.Uuvh_raw	gid25_group0_ceac.adc6 0.01
+#line 69
+    row2.Imes		gid25_group0_biip_b.int0 0.000000845286
+#line 69
+    row2.Dly_gid	gid25_group0_gvi.quant6
+#line 69
+    row2.Dly_vsdc	gid25_group0_gvi.quant2
+#line 69
+
+#line 69
+    row2.osc.gain	gid25_group0_biip_b.gain0
+#line 69
+    row2.osc.int	gid25_group0_biip_b.int0
+#line 69
+    row2.osc.data	gid25_group0_biip_b.line0
+#line 69
+    row2.osc.get	gid25_group0_biip_b.get_osc0
+#line 69
+    row2.osc.ptsofs	gid25_group0_biip_b.ptsofs0
+#line 69
+    row2.osc.cur_ptsofs gid25_group0_biip_b.cur_ptsofs0
+#line 69
+    row2.osc.cur_numpts gid25_group0_biip_b.cur_numpts0
+#line 69
+    row2.osc.write_addr gid25_group0_biip_b.write_addr0
+#line 69
+
+#line 69
+        
+#line 69
+    row3.onoff		gid25_group0_ceac.outrb3
+#line 69
+    row3.err		gid25_group0_ceac.inprb3
+#line 69
+    row3.ena_gid	gid25_group0_gvi.mask_bit_7
+#line 69
+    row3.ena_vsdc	gid25_group0_gvi.mask_bit_3
+#line 69
+    row3.Uset		gid25_group0_ceac.out3           0.01
+#line 69
+    row3.Umes		gid25_group0_t_uizm3.0           0.01
+#line 69
+    row3.Umes_raw	gid25_group0_ceac.adc3 0.01
+#line 69
+    row3.Uuvh		gid25_group0_t_uuvh3.0           0.01
+#line 69
+    row3.Uuvh_raw	gid25_group0_ceac.adc7 0.01
+#line 69
+    row3.Imes		gid25_group0_biip_b.int1 0.000000845286
+#line 69
+    row3.Dly_gid	gid25_group0_gvi.quant7
+#line 69
+    row3.Dly_vsdc	gid25_group0_gvi.quant3
+#line 69
+
+#line 69
+    row3.osc.gain	gid25_group0_biip_b.gain1
+#line 69
+    row3.osc.int	gid25_group0_biip_b.int1
+#line 69
+    row3.osc.data	gid25_group0_biip_b.line1
+#line 69
+    row3.osc.get	gid25_group0_biip_b.get_osc1
+#line 69
+    row3.osc.ptsofs	gid25_group0_biip_b.ptsofs1
+#line 69
+    row3.osc.cur_ptsofs gid25_group0_biip_b.cur_ptsofs1
+#line 69
+    row3.osc.cur_numpts gid25_group0_biip_b.cur_numpts1
+#line 69
+    row3.osc.write_addr gid25_group0_biip_b.write_addr1
+#line 69
+
+#line 69
+    }
+#line 69
+
+
+#line 70
+    dev	gid25_group1_ceac		ceac124/remdrv		~ 0,62	b:cangw-gimn25:8002 beg=0 end=7 adc_timecode=3
+#line 70
+    dev	gid25_group1_gvi		cgvi8/remdrv		~ 0,60	b:cangw-gimn25:8002
+#line 70
+    dev gid25_group1_biip_a	vsdc2/remdrv		~ 0,3	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 70
+    dev gid25_group1_biip_b	vsdc2/remdrv		~ 0,4	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 70
+
+#line 70
+    dev gid25_group1_t_uizm0	trig_read		r1i -	gid25_group1_biip_a.int0//gid25_group1_ceac.adc0
+#line 70
+    dev gid25_group1_t_uizm1	trig_read		r1i -	gid25_group1_biip_a.int1//gid25_group1_ceac.adc1
+#line 70
+    dev gid25_group1_t_uizm2	trig_read		r1i -	gid25_group1_biip_b.int0//gid25_group1_ceac.adc2
+#line 70
+    dev gid25_group1_t_uizm3	trig_read		r1i -	gid25_group1_biip_b.int1//gid25_group1_ceac.adc3
+#line 70
+    dev gid25_group1_t_uuvh0	trig_read		r1i -	gid25_group1_biip_a.int0//gid25_group1_ceac.adc4
+#line 70
+    dev gid25_group1_t_uuvh1	trig_read		r1i -	gid25_group1_biip_a.int1//gid25_group1_ceac.adc5
+#line 70
+    dev gid25_group1_t_uuvh2	trig_read		r1i -	gid25_group1_biip_b.int0//gid25_group1_ceac.adc6
+#line 70
+    dev gid25_group1_t_uuvh3	trig_read		r1i -	gid25_group1_biip_b.int1//gid25_group1_ceac.adc7
+#line 70
+
+#line 70
+    cpoint gid25_group1 {
+#line 70
+        ceac	gid25_group1_ceac
+#line 70
+        gvi	gid25_group1_gvi
+#line 70
+        biip0	gid25_group1_biip_a
+#line 70
+        biip1	gid25_group1_biip_b
+#line 70
+
+#line 70
+        
+#line 70
+    row0.onoff		gid25_group1_ceac.outrb0
+#line 70
+    row0.err		gid25_group1_ceac.inprb0
+#line 70
+    row0.ena_gid	gid25_group1_gvi.mask_bit_4
+#line 70
+    row0.ena_vsdc	gid25_group1_gvi.mask_bit_0
+#line 70
+    row0.Uset		gid25_group1_ceac.out0           0.01
+#line 70
+    row0.Umes		gid25_group1_t_uizm0.0           0.01
+#line 70
+    row0.Umes_raw	gid25_group1_ceac.adc0 0.01
+#line 70
+    row0.Uuvh		gid25_group1_t_uuvh0.0           0.01
+#line 70
+    row0.Uuvh_raw	gid25_group1_ceac.adc4 0.01
+#line 70
+    row0.Imes		gid25_group1_biip_a.int0 0.000000845286
+#line 70
+    row0.Dly_gid	gid25_group1_gvi.quant4
+#line 70
+    row0.Dly_vsdc	gid25_group1_gvi.quant0
+#line 70
+
+#line 70
+    row0.osc.gain	gid25_group1_biip_a.gain0
+#line 70
+    row0.osc.int	gid25_group1_biip_a.int0
+#line 70
+    row0.osc.data	gid25_group1_biip_a.line0
+#line 70
+    row0.osc.get	gid25_group1_biip_a.get_osc0
+#line 70
+    row0.osc.ptsofs	gid25_group1_biip_a.ptsofs0
+#line 70
+    row0.osc.cur_ptsofs gid25_group1_biip_a.cur_ptsofs0
+#line 70
+    row0.osc.cur_numpts gid25_group1_biip_a.cur_numpts0
+#line 70
+    row0.osc.write_addr gid25_group1_biip_a.write_addr0
+#line 70
+
+#line 70
+        
+#line 70
+    row1.onoff		gid25_group1_ceac.outrb1
+#line 70
+    row1.err		gid25_group1_ceac.inprb1
+#line 70
+    row1.ena_gid	gid25_group1_gvi.mask_bit_5
+#line 70
+    row1.ena_vsdc	gid25_group1_gvi.mask_bit_1
+#line 70
+    row1.Uset		gid25_group1_ceac.out1           0.01
+#line 70
+    row1.Umes		gid25_group1_t_uizm1.0           0.01
+#line 70
+    row1.Umes_raw	gid25_group1_ceac.adc1 0.01
+#line 70
+    row1.Uuvh		gid25_group1_t_uuvh1.0           0.01
+#line 70
+    row1.Uuvh_raw	gid25_group1_ceac.adc5 0.01
+#line 70
+    row1.Imes		gid25_group1_biip_a.int1 0.000000845286
+#line 70
+    row1.Dly_gid	gid25_group1_gvi.quant5
+#line 70
+    row1.Dly_vsdc	gid25_group1_gvi.quant1
+#line 70
+
+#line 70
+    row1.osc.gain	gid25_group1_biip_a.gain1
+#line 70
+    row1.osc.int	gid25_group1_biip_a.int1
+#line 70
+    row1.osc.data	gid25_group1_biip_a.line1
+#line 70
+    row1.osc.get	gid25_group1_biip_a.get_osc1
+#line 70
+    row1.osc.ptsofs	gid25_group1_biip_a.ptsofs1
+#line 70
+    row1.osc.cur_ptsofs gid25_group1_biip_a.cur_ptsofs1
+#line 70
+    row1.osc.cur_numpts gid25_group1_biip_a.cur_numpts1
+#line 70
+    row1.osc.write_addr gid25_group1_biip_a.write_addr1
+#line 70
+
+#line 70
+        
+#line 70
+    row2.onoff		gid25_group1_ceac.outrb2
+#line 70
+    row2.err		gid25_group1_ceac.inprb2
+#line 70
+    row2.ena_gid	gid25_group1_gvi.mask_bit_6
+#line 70
+    row2.ena_vsdc	gid25_group1_gvi.mask_bit_2
+#line 70
+    row2.Uset		gid25_group1_ceac.out2           0.01
+#line 70
+    row2.Umes		gid25_group1_t_uizm2.0           0.01
+#line 70
+    row2.Umes_raw	gid25_group1_ceac.adc2 0.01
+#line 70
+    row2.Uuvh		gid25_group1_t_uuvh2.0           0.01
+#line 70
+    row2.Uuvh_raw	gid25_group1_ceac.adc6 0.01
+#line 70
+    row2.Imes		gid25_group1_biip_b.int0 0.000000845286
+#line 70
+    row2.Dly_gid	gid25_group1_gvi.quant6
+#line 70
+    row2.Dly_vsdc	gid25_group1_gvi.quant2
+#line 70
+
+#line 70
+    row2.osc.gain	gid25_group1_biip_b.gain0
+#line 70
+    row2.osc.int	gid25_group1_biip_b.int0
+#line 70
+    row2.osc.data	gid25_group1_biip_b.line0
+#line 70
+    row2.osc.get	gid25_group1_biip_b.get_osc0
+#line 70
+    row2.osc.ptsofs	gid25_group1_biip_b.ptsofs0
+#line 70
+    row2.osc.cur_ptsofs gid25_group1_biip_b.cur_ptsofs0
+#line 70
+    row2.osc.cur_numpts gid25_group1_biip_b.cur_numpts0
+#line 70
+    row2.osc.write_addr gid25_group1_biip_b.write_addr0
+#line 70
+
+#line 70
+        
+#line 70
+    row3.onoff		gid25_group1_ceac.outrb3
+#line 70
+    row3.err		gid25_group1_ceac.inprb3
+#line 70
+    row3.ena_gid	gid25_group1_gvi.mask_bit_7
+#line 70
+    row3.ena_vsdc	gid25_group1_gvi.mask_bit_3
+#line 70
+    row3.Uset		gid25_group1_ceac.out3           0.01
+#line 70
+    row3.Umes		gid25_group1_t_uizm3.0           0.01
+#line 70
+    row3.Umes_raw	gid25_group1_ceac.adc3 0.01
+#line 70
+    row3.Uuvh		gid25_group1_t_uuvh3.0           0.01
+#line 70
+    row3.Uuvh_raw	gid25_group1_ceac.adc7 0.01
+#line 70
+    row3.Imes		gid25_group1_biip_b.int1 0.000000845286
+#line 70
+    row3.Dly_gid	gid25_group1_gvi.quant7
+#line 70
+    row3.Dly_vsdc	gid25_group1_gvi.quant3
+#line 70
+
+#line 70
+    row3.osc.gain	gid25_group1_biip_b.gain1
+#line 70
+    row3.osc.int	gid25_group1_biip_b.int1
+#line 70
+    row3.osc.data	gid25_group1_biip_b.line1
+#line 70
+    row3.osc.get	gid25_group1_biip_b.get_osc1
+#line 70
+    row3.osc.ptsofs	gid25_group1_biip_b.ptsofs1
+#line 70
+    row3.osc.cur_ptsofs gid25_group1_biip_b.cur_ptsofs1
+#line 70
+    row3.osc.cur_numpts gid25_group1_biip_b.cur_numpts1
+#line 70
+    row3.osc.write_addr gid25_group1_biip_b.write_addr1
+#line 70
+
+#line 70
+    }
+#line 70
+
+
+#line 71
+    dev	gid25_group2_ceac		ceac124/remdrv		~ 0,59	b:cangw-gimn25:8002 beg=0 end=7 adc_timecode=3
+#line 71
+    dev	gid25_group2_gvi		cgvi8/remdrv		~ 0,57	b:cangw-gimn25:8002
+#line 71
+    dev gid25_group2_biip_a	vsdc2/remdrv		~ 0,17	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 71
+    dev gid25_group2_biip_b	vsdc2/remdrv		~ 0,18	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 71
+
+#line 71
+    dev gid25_group2_t_uizm0	trig_read		r1i -	gid25_group2_biip_a.int0//gid25_group2_ceac.adc0
+#line 71
+    dev gid25_group2_t_uizm1	trig_read		r1i -	gid25_group2_biip_a.int1//gid25_group2_ceac.adc1
+#line 71
+    dev gid25_group2_t_uizm2	trig_read		r1i -	gid25_group2_biip_b.int0//gid25_group2_ceac.adc2
+#line 71
+    dev gid25_group2_t_uizm3	trig_read		r1i -	gid25_group2_biip_b.int1//gid25_group2_ceac.adc3
+#line 71
+    dev gid25_group2_t_uuvh0	trig_read		r1i -	gid25_group2_biip_a.int0//gid25_group2_ceac.adc4
+#line 71
+    dev gid25_group2_t_uuvh1	trig_read		r1i -	gid25_group2_biip_a.int1//gid25_group2_ceac.adc5
+#line 71
+    dev gid25_group2_t_uuvh2	trig_read		r1i -	gid25_group2_biip_b.int0//gid25_group2_ceac.adc6
+#line 71
+    dev gid25_group2_t_uuvh3	trig_read		r1i -	gid25_group2_biip_b.int1//gid25_group2_ceac.adc7
+#line 71
+
+#line 71
+    cpoint gid25_group2 {
+#line 71
+        ceac	gid25_group2_ceac
+#line 71
+        gvi	gid25_group2_gvi
+#line 71
+        biip0	gid25_group2_biip_a
+#line 71
+        biip1	gid25_group2_biip_b
+#line 71
+
+#line 71
+        
+#line 71
+    row0.onoff		gid25_group2_ceac.outrb0
+#line 71
+    row0.err		gid25_group2_ceac.inprb0
+#line 71
+    row0.ena_gid	gid25_group2_gvi.mask_bit_4
+#line 71
+    row0.ena_vsdc	gid25_group2_gvi.mask_bit_0
+#line 71
+    row0.Uset		gid25_group2_ceac.out0           0.01
+#line 71
+    row0.Umes		gid25_group2_t_uizm0.0           0.01
+#line 71
+    row0.Umes_raw	gid25_group2_ceac.adc0 0.01
+#line 71
+    row0.Uuvh		gid25_group2_t_uuvh0.0           0.01
+#line 71
+    row0.Uuvh_raw	gid25_group2_ceac.adc4 0.01
+#line 71
+    row0.Imes		gid25_group2_biip_a.int0 0.000000845286
+#line 71
+    row0.Dly_gid	gid25_group2_gvi.quant4
+#line 71
+    row0.Dly_vsdc	gid25_group2_gvi.quant0
+#line 71
+
+#line 71
+    row0.osc.gain	gid25_group2_biip_a.gain0
+#line 71
+    row0.osc.int	gid25_group2_biip_a.int0
+#line 71
+    row0.osc.data	gid25_group2_biip_a.line0
+#line 71
+    row0.osc.get	gid25_group2_biip_a.get_osc0
+#line 71
+    row0.osc.ptsofs	gid25_group2_biip_a.ptsofs0
+#line 71
+    row0.osc.cur_ptsofs gid25_group2_biip_a.cur_ptsofs0
+#line 71
+    row0.osc.cur_numpts gid25_group2_biip_a.cur_numpts0
+#line 71
+    row0.osc.write_addr gid25_group2_biip_a.write_addr0
+#line 71
+
+#line 71
+        
+#line 71
+    row1.onoff		gid25_group2_ceac.outrb1
+#line 71
+    row1.err		gid25_group2_ceac.inprb1
+#line 71
+    row1.ena_gid	gid25_group2_gvi.mask_bit_5
+#line 71
+    row1.ena_vsdc	gid25_group2_gvi.mask_bit_1
+#line 71
+    row1.Uset		gid25_group2_ceac.out1           0.01
+#line 71
+    row1.Umes		gid25_group2_t_uizm1.0           0.01
+#line 71
+    row1.Umes_raw	gid25_group2_ceac.adc1 0.01
+#line 71
+    row1.Uuvh		gid25_group2_t_uuvh1.0           0.01
+#line 71
+    row1.Uuvh_raw	gid25_group2_ceac.adc5 0.01
+#line 71
+    row1.Imes		gid25_group2_biip_a.int1 0.000000845286
+#line 71
+    row1.Dly_gid	gid25_group2_gvi.quant5
+#line 71
+    row1.Dly_vsdc	gid25_group2_gvi.quant1
+#line 71
+
+#line 71
+    row1.osc.gain	gid25_group2_biip_a.gain1
+#line 71
+    row1.osc.int	gid25_group2_biip_a.int1
+#line 71
+    row1.osc.data	gid25_group2_biip_a.line1
+#line 71
+    row1.osc.get	gid25_group2_biip_a.get_osc1
+#line 71
+    row1.osc.ptsofs	gid25_group2_biip_a.ptsofs1
+#line 71
+    row1.osc.cur_ptsofs gid25_group2_biip_a.cur_ptsofs1
+#line 71
+    row1.osc.cur_numpts gid25_group2_biip_a.cur_numpts1
+#line 71
+    row1.osc.write_addr gid25_group2_biip_a.write_addr1
+#line 71
+
+#line 71
+        
+#line 71
+    row2.onoff		gid25_group2_ceac.outrb2
+#line 71
+    row2.err		gid25_group2_ceac.inprb2
+#line 71
+    row2.ena_gid	gid25_group2_gvi.mask_bit_6
+#line 71
+    row2.ena_vsdc	gid25_group2_gvi.mask_bit_2
+#line 71
+    row2.Uset		gid25_group2_ceac.out2           0.01
+#line 71
+    row2.Umes		gid25_group2_t_uizm2.0           0.01
+#line 71
+    row2.Umes_raw	gid25_group2_ceac.adc2 0.01
+#line 71
+    row2.Uuvh		gid25_group2_t_uuvh2.0           0.01
+#line 71
+    row2.Uuvh_raw	gid25_group2_ceac.adc6 0.01
+#line 71
+    row2.Imes		gid25_group2_biip_b.int0 0.000000845286
+#line 71
+    row2.Dly_gid	gid25_group2_gvi.quant6
+#line 71
+    row2.Dly_vsdc	gid25_group2_gvi.quant2
+#line 71
+
+#line 71
+    row2.osc.gain	gid25_group2_biip_b.gain0
+#line 71
+    row2.osc.int	gid25_group2_biip_b.int0
+#line 71
+    row2.osc.data	gid25_group2_biip_b.line0
+#line 71
+    row2.osc.get	gid25_group2_biip_b.get_osc0
+#line 71
+    row2.osc.ptsofs	gid25_group2_biip_b.ptsofs0
+#line 71
+    row2.osc.cur_ptsofs gid25_group2_biip_b.cur_ptsofs0
+#line 71
+    row2.osc.cur_numpts gid25_group2_biip_b.cur_numpts0
+#line 71
+    row2.osc.write_addr gid25_group2_biip_b.write_addr0
+#line 71
+
+#line 71
+        
+#line 71
+    row3.onoff		gid25_group2_ceac.outrb3
+#line 71
+    row3.err		gid25_group2_ceac.inprb3
+#line 71
+    row3.ena_gid	gid25_group2_gvi.mask_bit_7
+#line 71
+    row3.ena_vsdc	gid25_group2_gvi.mask_bit_3
+#line 71
+    row3.Uset		gid25_group2_ceac.out3           0.01
+#line 71
+    row3.Umes		gid25_group2_t_uizm3.0           0.01
+#line 71
+    row3.Umes_raw	gid25_group2_ceac.adc3 0.01
+#line 71
+    row3.Uuvh		gid25_group2_t_uuvh3.0           0.01
+#line 71
+    row3.Uuvh_raw	gid25_group2_ceac.adc7 0.01
+#line 71
+    row3.Imes		gid25_group2_biip_b.int1 0.000000845286
+#line 71
+    row3.Dly_gid	gid25_group2_gvi.quant7
+#line 71
+    row3.Dly_vsdc	gid25_group2_gvi.quant3
+#line 71
+
+#line 71
+    row3.osc.gain	gid25_group2_biip_b.gain1
+#line 71
+    row3.osc.int	gid25_group2_biip_b.int1
+#line 71
+    row3.osc.data	gid25_group2_biip_b.line1
+#line 71
+    row3.osc.get	gid25_group2_biip_b.get_osc1
+#line 71
+    row3.osc.ptsofs	gid25_group2_biip_b.ptsofs1
+#line 71
+    row3.osc.cur_ptsofs gid25_group2_biip_b.cur_ptsofs1
+#line 71
+    row3.osc.cur_numpts gid25_group2_biip_b.cur_numpts1
+#line 71
+    row3.osc.write_addr gid25_group2_biip_b.write_addr1
+#line 71
+
+#line 71
+    }
+#line 71
+
+
+#line 72
+    dev	gid25_group3_ceac		ceac124/remdrv		~ 0,58	b:cangw-gimn25:8002 beg=0 end=7 adc_timecode=3
+#line 72
+    dev	gid25_group3_gvi		cgvi8/remdrv		~ 0,56	b:cangw-gimn25:8002
+#line 72
+    dev gid25_group3_biip_a	vsdc2/remdrv		~ 0,19	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 72
+    dev gid25_group3_biip_b	vsdc2/remdrv		~ 0,20	b:cangw-gimn25:8002 #ch0start=stop0 ch0stop=start0 ch1start=stop1 ch1stop=start1
+#line 72
+
+#line 72
+    dev gid25_group3_t_uizm0	trig_read		r1i -	gid25_group3_biip_a.int0//gid25_group3_ceac.adc0
+#line 72
+    dev gid25_group3_t_uizm1	trig_read		r1i -	gid25_group3_biip_a.int1//gid25_group3_ceac.adc1
+#line 72
+    dev gid25_group3_t_uizm2	trig_read		r1i -	gid25_group3_biip_b.int0//gid25_group3_ceac.adc2
+#line 72
+    dev gid25_group3_t_uizm3	trig_read		r1i -	gid25_group3_biip_b.int1//gid25_group3_ceac.adc3
+#line 72
+    dev gid25_group3_t_uuvh0	trig_read		r1i -	gid25_group3_biip_a.int0//gid25_group3_ceac.adc4
+#line 72
+    dev gid25_group3_t_uuvh1	trig_read		r1i -	gid25_group3_biip_a.int1//gid25_group3_ceac.adc5
+#line 72
+    dev gid25_group3_t_uuvh2	trig_read		r1i -	gid25_group3_biip_b.int0//gid25_group3_ceac.adc6
+#line 72
+    dev gid25_group3_t_uuvh3	trig_read		r1i -	gid25_group3_biip_b.int1//gid25_group3_ceac.adc7
+#line 72
+
+#line 72
+    cpoint gid25_group3 {
+#line 72
+        ceac	gid25_group3_ceac
+#line 72
+        gvi	gid25_group3_gvi
+#line 72
+        biip0	gid25_group3_biip_a
+#line 72
+        biip1	gid25_group3_biip_b
+#line 72
+
+#line 72
+        
+#line 72
+    row0.onoff		gid25_group3_ceac.outrb0
+#line 72
+    row0.err		gid25_group3_ceac.inprb0
+#line 72
+    row0.ena_gid	gid25_group3_gvi.mask_bit_4
+#line 72
+    row0.ena_vsdc	gid25_group3_gvi.mask_bit_0
+#line 72
+    row0.Uset		gid25_group3_ceac.out0           0.01
+#line 72
+    row0.Umes		gid25_group3_t_uizm0.0           0.01
+#line 72
+    row0.Umes_raw	gid25_group3_ceac.adc0 0.01
+#line 72
+    row0.Uuvh		gid25_group3_t_uuvh0.0           0.01
+#line 72
+    row0.Uuvh_raw	gid25_group3_ceac.adc4 0.01
+#line 72
+    row0.Imes		gid25_group3_biip_a.int0 0.000000845286
+#line 72
+    row0.Dly_gid	gid25_group3_gvi.quant4
+#line 72
+    row0.Dly_vsdc	gid25_group3_gvi.quant0
+#line 72
+
+#line 72
+    row0.osc.gain	gid25_group3_biip_a.gain0
+#line 72
+    row0.osc.int	gid25_group3_biip_a.int0
+#line 72
+    row0.osc.data	gid25_group3_biip_a.line0
+#line 72
+    row0.osc.get	gid25_group3_biip_a.get_osc0
+#line 72
+    row0.osc.ptsofs	gid25_group3_biip_a.ptsofs0
+#line 72
+    row0.osc.cur_ptsofs gid25_group3_biip_a.cur_ptsofs0
+#line 72
+    row0.osc.cur_numpts gid25_group3_biip_a.cur_numpts0
+#line 72
+    row0.osc.write_addr gid25_group3_biip_a.write_addr0
+#line 72
+
+#line 72
+        
+#line 72
+    row1.onoff		gid25_group3_ceac.outrb1
+#line 72
+    row1.err		gid25_group3_ceac.inprb1
+#line 72
+    row1.ena_gid	gid25_group3_gvi.mask_bit_5
+#line 72
+    row1.ena_vsdc	gid25_group3_gvi.mask_bit_1
+#line 72
+    row1.Uset		gid25_group3_ceac.out1           0.01
+#line 72
+    row1.Umes		gid25_group3_t_uizm1.0           0.01
+#line 72
+    row1.Umes_raw	gid25_group3_ceac.adc1 0.01
+#line 72
+    row1.Uuvh		gid25_group3_t_uuvh1.0           0.01
+#line 72
+    row1.Uuvh_raw	gid25_group3_ceac.adc5 0.01
+#line 72
+    row1.Imes		gid25_group3_biip_a.int1 0.000000845286
+#line 72
+    row1.Dly_gid	gid25_group3_gvi.quant5
+#line 72
+    row1.Dly_vsdc	gid25_group3_gvi.quant1
+#line 72
+
+#line 72
+    row1.osc.gain	gid25_group3_biip_a.gain1
+#line 72
+    row1.osc.int	gid25_group3_biip_a.int1
+#line 72
+    row1.osc.data	gid25_group3_biip_a.line1
+#line 72
+    row1.osc.get	gid25_group3_biip_a.get_osc1
+#line 72
+    row1.osc.ptsofs	gid25_group3_biip_a.ptsofs1
+#line 72
+    row1.osc.cur_ptsofs gid25_group3_biip_a.cur_ptsofs1
+#line 72
+    row1.osc.cur_numpts gid25_group3_biip_a.cur_numpts1
+#line 72
+    row1.osc.write_addr gid25_group3_biip_a.write_addr1
+#line 72
+
+#line 72
+        
+#line 72
+    row2.onoff		gid25_group3_ceac.outrb2
+#line 72
+    row2.err		gid25_group3_ceac.inprb2
+#line 72
+    row2.ena_gid	gid25_group3_gvi.mask_bit_6
+#line 72
+    row2.ena_vsdc	gid25_group3_gvi.mask_bit_2
+#line 72
+    row2.Uset		gid25_group3_ceac.out2           0.01
+#line 72
+    row2.Umes		gid25_group3_t_uizm2.0           0.01
+#line 72
+    row2.Umes_raw	gid25_group3_ceac.adc2 0.01
+#line 72
+    row2.Uuvh		gid25_group3_t_uuvh2.0           0.01
+#line 72
+    row2.Uuvh_raw	gid25_group3_ceac.adc6 0.01
+#line 72
+    row2.Imes		gid25_group3_biip_b.int0 0.000000845286
+#line 72
+    row2.Dly_gid	gid25_group3_gvi.quant6
+#line 72
+    row2.Dly_vsdc	gid25_group3_gvi.quant2
+#line 72
+
+#line 72
+    row2.osc.gain	gid25_group3_biip_b.gain0
+#line 72
+    row2.osc.int	gid25_group3_biip_b.int0
+#line 72
+    row2.osc.data	gid25_group3_biip_b.line0
+#line 72
+    row2.osc.get	gid25_group3_biip_b.get_osc0
+#line 72
+    row2.osc.ptsofs	gid25_group3_biip_b.ptsofs0
+#line 72
+    row2.osc.cur_ptsofs gid25_group3_biip_b.cur_ptsofs0
+#line 72
+    row2.osc.cur_numpts gid25_group3_biip_b.cur_numpts0
+#line 72
+    row2.osc.write_addr gid25_group3_biip_b.write_addr0
+#line 72
+
+#line 72
+        
+#line 72
+    row3.onoff		gid25_group3_ceac.outrb3
+#line 72
+    row3.err		gid25_group3_ceac.inprb3
+#line 72
+    row3.ena_gid	gid25_group3_gvi.mask_bit_7
+#line 72
+    row3.ena_vsdc	gid25_group3_gvi.mask_bit_3
+#line 72
+    row3.Uset		gid25_group3_ceac.out3           0.01
+#line 72
+    row3.Umes		gid25_group3_t_uizm3.0           0.01
+#line 72
+    row3.Umes_raw	gid25_group3_ceac.adc3 0.01
+#line 72
+    row3.Uuvh		gid25_group3_t_uuvh3.0           0.01
+#line 72
+    row3.Uuvh_raw	gid25_group3_ceac.adc7 0.01
+#line 72
+    row3.Imes		gid25_group3_biip_b.int1 0.000000845286
+#line 72
+    row3.Dly_gid	gid25_group3_gvi.quant7
+#line 72
+    row3.Dly_vsdc	gid25_group3_gvi.quant3
+#line 72
+
+#line 72
+    row3.osc.gain	gid25_group3_biip_b.gain1
+#line 72
+    row3.osc.int	gid25_group3_biip_b.int1
+#line 72
+    row3.osc.data	gid25_group3_biip_b.line1
+#line 72
+    row3.osc.get	gid25_group3_biip_b.get_osc1
+#line 72
+    row3.osc.ptsofs	gid25_group3_biip_b.ptsofs1
+#line 72
+    row3.osc.cur_ptsofs gid25_group3_biip_b.cur_ptsofs1
+#line 72
+    row3.osc.cur_numpts gid25_group3_biip_b.cur_numpts1
+#line 72
+    row3.osc.write_addr gid25_group3_biip_b.write_addr1
+#line 72
+
+#line 72
+    }
+#line 72
+
+
+cpoint L21   gid25_group0.row0
+cpoint L22   gid25_group0.row1
+cpoint L23   gid25_group0.row2
+cpoint L24   gid25_group0.row3
+cpoint L25   gid25_group1.row0
+cpoint L26   gid25_group1.row1
+cpoint L27   gid25_group1.row2
+cpoint L28   gid25_group1.row3
+cpoint L29   gid25_group2.row0
+cpoint L30   gid25_group2.row1
+cpoint KZ15  gid25_group2.row2
+cpoint KX16  gid25_group2.row3
+cpoint KX17  gid25_group3.row0
+cpoint KL25X gid25_group3.row1
+cpoint rs4_3 gid25_group3.row2
+cpoint rs4_4 gid25_group3.row3
+
+dev icd_m5	cdac20/remdrv		~ 0,31	b:cangw-gimn25 spd=-400000
+
+#line 92
+    dev m5	ist_cdac20		~ -	-icd_m5
+#line 92
+    cpoint m5.Iset      m5.Iset      0.004
+#line 92
+    cpoint m5.Iset_rate m5.Iset_rate 0.004
+#line 92
+    cpoint m5.Iset_cur  m5.Iset_cur  0.004
+#line 92
+    cpoint m5.dcct1     m5.dcct1     0.004
+#line 92
+    cpoint m5.dcct2     m5.dcct2     0.004
+#line 92
+    cpoint m5.dac_mes   m5.dac_mes   0.004
+#line 92
+    cpoint m5.adc_dac   m5.adc_dac   0.004
+#line 92
+
+#line 92
+    cpoint m5.Imes      m5.dcct1
+#line 92
+ #!!!FLOAT: 1./250
+
+dev corr_dev	cac208/remdrv		~ 0,30	b:cangw-gimn25 spd=-1666666
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.kz13.Iset corr_dev.out0             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.kz13.Iset_rate corr_dev.out_rate0   r:0.00333333
+#line 96
+    cpoint corr.kz13.Imes corr_dev.adc0 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.kz13.Umes corr_dev.adc1 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.kx14.Iset corr_dev.out1             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.kx14.Iset_rate corr_dev.out_rate1   r:0.00333333
+#line 96
+    cpoint corr.kx14.Imes corr_dev.adc2 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.kx14.Umes corr_dev.adc3 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.km5.Iset corr_dev.out2             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.km5.Iset_rate corr_dev.out_rate2   r:0.00333333
+#line 96
+    cpoint corr.km5.Imes corr_dev.adc4 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.km5.Umes corr_dev.adc5 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.km6.Iset corr_dev.out3             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.km6.Iset_rate corr_dev.out_rate3   r:0.00333333
+#line 96
+    cpoint corr.km6.Imes corr_dev.adc6 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.km6.Umes corr_dev.adc7 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.x1_4.Iset corr_dev.out4             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.x1_4.Iset_rate corr_dev.out_rate4   r:0.00333333
+#line 96
+    cpoint corr.x1_4.Imes corr_dev.adc8 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.x1_4.Umes corr_dev.adc9 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.x1_5.Iset corr_dev.out5             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.x1_5.Iset_rate corr_dev.out_rate5   r:0.00333333
+#line 96
+    cpoint corr.x1_5.Imes corr_dev.adc10 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.x1_5.Umes corr_dev.adc11 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.x1_6.Iset corr_dev.out6             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.x1_6.Iset_rate corr_dev.out_rate6   r:0.00333333
+#line 96
+    cpoint corr.x1_6.Imes corr_dev.adc12 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.x1_6.Umes corr_dev.adc13 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+    
+#line 96
+    cpoint corr.x1_7.Iset corr_dev.out7             r:0.00333333 #!!!FLOAT: 10.0/3.0/1000 # 10V<->3A  1000 - A->mA
+#line 96
+    cpoint corr.x1_7.Iset_rate corr_dev.out_rate7   r:0.00333333
+#line 96
+    cpoint corr.x1_7.Imes corr_dev.adc14 r:0.00333333 #!!!FLOAT: ^^^
+#line 96
+    cpoint corr.x1_7.Umes corr_dev.adc15 r:0.25       #!!!FLOAT: 1/4.0
+#line 96
+
+#line 96
+
+
+dev gimn_pks	cpks8/remdrv		~ 0,29	b:cangw-gimn25
+dev gimn_gvi	cgvi8/remdrv		~ 0,28	b:cangw-gimn25
+cpoint gimn_ctl.pks	gimn_pks
+cpoint gimn_ctl.gvi	gimn_gvi
+cpoint gimn_ctl.vsdc	gid25_group3.biip1
+dev the_gimn	vepp4_gimn		~ -	gimn_ctl
